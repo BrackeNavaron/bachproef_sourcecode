@@ -13,6 +13,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         //override with custom for testing chapter
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,6 +39,7 @@ android {
 }
 
 ext {
+    multidex_version = '2.0.1'
     test_runner_version = '1.1.0'
     test_espresso_version = '3.1.0'
     test_junit_ext_version = '1.0.0'
@@ -64,6 +66,9 @@ ext {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Multidexing
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     //AndroidX
     implementation "androidx.core:core-ktx:$androidx_core_version"

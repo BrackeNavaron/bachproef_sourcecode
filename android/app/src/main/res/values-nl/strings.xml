@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="one">een</string>
+    <string name="two">twee</string>
+    <string name="three">drie</string>
+    <string name="four">vier</string>
+    <string name="five">vijf</string>
+    <string name="menu_settings">Instellingen</string>
+    <string name="menu_showcase">Voorvertoning</string>
+</resources>

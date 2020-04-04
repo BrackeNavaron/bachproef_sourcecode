@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/showcaseFragment">
+
+    <fragment
+        android:id="@+id/showcaseFragment"
+        android:name="com.example.bachelorproef.ui.fragment.ShowcaseFragment"
+        android:label="ShowcaseFragment"
+        tools:layout="@layout/fragment_showcase"/>
+</navigation>
