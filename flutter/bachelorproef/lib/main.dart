@@ -1,3 +1,4 @@
+import 'package:bachelorproef/widgets/showcase.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,13 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bachelorproef',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyWidget(),
+      home: Showcase(),
     );
   }
 }
-
-class MyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => Text("HelloWorld");
-}
-
