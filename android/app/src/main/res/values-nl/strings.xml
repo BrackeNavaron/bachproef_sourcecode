@@ -7,4 +7,11 @@
     <string name="five">vijf</string>
     <string name="menu_settings">Instellingen</string>
     <string name="menu_showcase">Voorvertoning</string>
+    <string name="choice_async">Asynchroon Werk</string>
+    <string name="choice_navigation">Navigatie</string>
+    <string name="choice_lists">Lijsten</string>
+    <string name="choice_pagers">Pagers</string>
+    <string name="choice_animation">Animatie</string>
+    <string name="choice_permissions">Permissies</string>
+    <string name="choice_forms">Formulieren</string>
 </resources>
