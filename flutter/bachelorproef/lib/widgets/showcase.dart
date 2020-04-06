@@ -1,3 +1,6 @@
+import 'package:bachelorproef/generated/i18n.dart';
+import 'package:bachelorproef/widgets/choiceGrid.dart';
+import 'package:bachelorproef/widgets/settingsPage.dart';
 import 'package:flutter/material.dart';
 
 class Showcase extends StatefulWidget {
@@ -23,18 +26,8 @@ class _ShowcaseState extends State<Showcase> {
       body: PageView(
         controller: _pageController,
         children: <Widget>[
-          //TODO ChoiceGrid
-          Scaffold(
-            body: Center(
-              child: Text("Choice Grid"),
-            ),
-          ),
-          Scaffold(
-            body: Center(
-              child: Text("Settings"),
-            ),
-          ),
-          //TODO settings
+          ChoiceGrid(),
+          SettingsPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -44,14 +37,13 @@ class _ShowcaseState extends State<Showcase> {
         },
         currentIndex: _selectedPage,
         items: [
-          //TODO translation support
           BottomNavigationBarItem(
             icon: Icon(Icons.view_module),
-            title: Text("Voorvertoning")
+            title: Text(S.of(context).showcaseTab)
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            title: Text("Instellingen")
+            title: Text(S.of(context).settingsTab)
           ),
         ],
       ),
