@@ -1,5 +1,5 @@
 import 'package:bachelorproef/generated/i18n.dart';
-import 'package:bachelorproef/widgets/choiceGrid.dart';
+import 'package:bachelorproef/widgets/choiceGridNavigator.dart';
 import 'package:bachelorproef/widgets/settingsPage.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,7 @@ class _ShowcaseState extends State<Showcase> {
       body: PageView(
         controller: _pageController,
         children: <Widget>[
-          ChoiceGrid(),
+          ChoiceGridNavigator(),
           SettingsPage(),
         ],
       ),

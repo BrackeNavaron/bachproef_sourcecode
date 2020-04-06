@@ -5,5 +5,12 @@
   "four":"four",
   "five": "five",
   "showcaseTab": "Showcase",
-  "settingsTab": "Settings"
+  "settingsTab": "Settings",
+  "asyncWork": "Async Work",
+  "navigation": "Navigation",
+  "lists": "Lists",
+  "pagers": "Pagers",
+  "animation": "Animation",
+  "permissions": "Permissions",
+  "forms": "Forms"
 }

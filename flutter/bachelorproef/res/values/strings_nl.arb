@@ -5,5 +5,12 @@
   "four":"vier",
   "five": "vijf",
   "showcaseTab": "Voorvertoning",
-  "settingsTab": "Instellingen"
+  "settingsTab": "Instellingen",
+  "asyncWork": "Asynchroon Werk",
+  "navigation": "Navigatie",
+  "lists": "Lijsten",
+  "pagers": "Pagers",
+  "animation": "Animatie",
+  "permissions": "Permissies",
+  "forms": "Formulieren"
 }

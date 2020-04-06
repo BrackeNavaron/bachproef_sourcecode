@@ -21,9 +21,16 @@ class S implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  String get animation => "Animation";
+  String get asyncWork => "Async Work";
   String get five => "five";
+  String get forms => "Forms";
   String get four => "four";
+  String get lists => "Lists";
+  String get navigation => "Navigation";
   String get one => "one";
+  String get pagers => "Pagers";
+  String get permissions => "Permissions";
   String get settingsTab => "Settings";
   String get showcaseTab => "Showcase";
   String get three => "three";
@@ -41,19 +48,33 @@ class $nl extends S {
   TextDirection get textDirection => TextDirection.ltr;
 
   @override
-  String get showcaseTab => "Voorvertoning";
-  @override
-  String get four => "vier";
-  @override
-  String get settingsTab => "Instellingen";
-  @override
   String get one => "een";
   @override
   String get two => "twee";
   @override
   String get three => "drie";
   @override
+  String get animation => "Animatie";
+  @override
+  String get navigation => "Navigatie";
+  @override
+  String get showcaseTab => "Voorvertoning";
+  @override
+  String get asyncWork => "Asynchroon Werk";
+  @override
+  String get four => "vier";
+  @override
+  String get settingsTab => "Instellingen";
+  @override
+  String get lists => "Lijsten";
+  @override
+  String get pagers => "Pagers";
+  @override
+  String get permissions => "Permissies";
+  @override
   String get five => "vijf";
+  @override
+  String get forms => "Formulieren";
 }
 
 class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
