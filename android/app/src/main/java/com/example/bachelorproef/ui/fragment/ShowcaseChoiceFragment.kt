@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bachelorproef.R
+import com.example.bachelorproef.databinding.FragmentShowcaseChoiceBinding
 import com.example.bachelorproef.ui.recyclerview.ChoiceClickListener
 import com.example.bachelorproef.ui.recyclerview.ChoicesAdapter
 import com.example.bachelorproef.ui.recyclerview.ShowcaseChoice
 import com.example.bachelorproef.viewmodel.ShowcaseViewModel
-import com.example.bacherlorproef.R
-import com.example.bacherlorproef.databinding.FragmentShowcaseChoiceBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {

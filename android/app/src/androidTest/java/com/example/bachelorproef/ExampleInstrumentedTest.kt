@@ -1,4 +1,4 @@
-package com.example.bacherlorproef
+package com.example.bachelorproef
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

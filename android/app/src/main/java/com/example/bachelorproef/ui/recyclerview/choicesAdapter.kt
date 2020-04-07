@@ -3,7 +3,7 @@ package com.example.bachelorproef.ui.recyclerview
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bacherlorproef.databinding.ChoiceItemBinding
+import com.example.bachelorproef.databinding.ChoiceItemBinding
 
 interface ChoiceClickListener {
     fun onChoiceSelected(choice: ShowcaseChoice)

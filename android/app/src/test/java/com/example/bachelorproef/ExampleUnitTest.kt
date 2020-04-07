@@ -1,4 +1,4 @@
-package com.example.bacherlorproef
+package com.example.bachelorproef
 
 import org.junit.Test
 

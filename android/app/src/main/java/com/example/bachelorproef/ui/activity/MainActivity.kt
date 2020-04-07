@@ -1,8 +1,9 @@
-package com.example.bacherlorproef.ui.activity
+package com.example.bachelorproef.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bacherlorproef.R
+import com.example.bachelorproef.R
+
 
 class MainActivity : AppCompatActivity() {
 
