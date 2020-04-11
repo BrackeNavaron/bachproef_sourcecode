@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="choice_cols">2</integer>
+    <dimen name="pageMargin">20dp</dimen>
+    <dimen name="offset">30dp</dimen>
 </resources>
