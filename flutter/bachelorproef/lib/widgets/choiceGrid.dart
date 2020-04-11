@@ -80,7 +80,8 @@ class ChoiceGrid extends StatelessWidget {
         itemBuilder: (context,index){
           return GestureDetector(
             onTap: (){
-              //TODO navigate to the item tab
+              //TODO define other routes!
+              Navigator.of(context).pushNamed(choices[index]["destination"]);
             },
             child: SizedBox(
               width: 150,

@@ -23,6 +23,7 @@ class S implements WidgetsLocalizations {
 
   String get animation => "Animation";
   String get asyncWork => "Async Work";
+  String get back_to_showcase => "Back to Showcase";
   String get five => "five";
   String get forms => "Forms";
   String get four => "four";
@@ -71,6 +72,8 @@ class $nl extends S {
   String get pagers => "Pagers";
   @override
   String get permissions => "Permissies";
+  @override
+  String get back_to_showcase => "Terug naar Voorvertoning";
   @override
   String get five => "vijf";
   @override
