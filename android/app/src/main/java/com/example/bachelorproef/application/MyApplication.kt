@@ -1,7 +1,8 @@
 package com.example.bachelorproef.application
 
-import android.app.Application
 import androidx.multidex.MultiDexApplication
+import com.example.bachelorproef.viewmodel.ListViewModel
+import com.example.bachelorproef.viewmodel.PagerViewModel
 import com.example.bachelorproef.viewmodel.ShowcaseViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -29,6 +30,12 @@ class MyApplication : MultiDexApplication() {
     private val viewModelModule = module {
         viewModel {
             ShowcaseViewModel(get())
+        }
+        viewModel {
+            PagerViewModel()
+        }
+        viewModel {
+            ListViewModel()
         }
     }
 }

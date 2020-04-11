@@ -14,4 +14,5 @@
     <string name="choice_animation">Animation</string>
     <string name="choice_permissions">Permissions</string>
     <string name="choice_forms">Forms</string>
+    <string name="back_to_showcase">Back to Showcase</string>
 </resources>

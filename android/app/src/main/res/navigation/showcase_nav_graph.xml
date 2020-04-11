@@ -8,5 +8,22 @@
         android:id="@+id/showcaseChoiceFragment"
         android:name="com.example.bachelorproef.ui.fragment.ShowcaseChoiceFragment"
         android:label="ShowcaseChoiceFragment"
-        tools:layout="@layout/fragment_showcase_choice"/>
+        tools:layout="@layout/fragment_showcase_choice">
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_pagerFragment"
+            app:destination="@id/pagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.bachelorproef.ui.fragment.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list"/>
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.example.bachelorproef.ui.fragment.PagerFragment"
+        android:label="PagerFragment"
+        tools:layout="@layout/fragment_pager"/>
 </navigation>

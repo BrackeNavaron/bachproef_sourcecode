@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bachelorproef.R
@@ -20,7 +21,7 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
 
     lateinit var choicesRV: RecyclerView
 
-    private val choices = listOf<ShowcaseChoice>(
+    private val choices = listOf(
         ShowcaseChoice(
             R.drawable.ic_hourglass_full_24px,
             R.string.choice_async,
@@ -34,12 +35,12 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
         ShowcaseChoice(
             R.drawable.ic_format_list_numbered_24px,
             R.string.choice_lists,
-            0//TODO paste in the correct id when the destination exists
+            R.id.listFragment
         ),
         ShowcaseChoice(
             R.drawable.ic_view_carousel_24px,
             R.string.choice_pagers,
-            0//TODO paste in the correct id when the destination exists
+            R.id.pagerFragment
         ),
         ShowcaseChoice(
             R.drawable.ic_transform_24px,
@@ -120,6 +121,10 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
     }
 
     override fun onChoiceSelected(choice: ShowcaseChoice) {
-        //TODO navigate with destination id and nav host
+        val navController = findNavController()
+        if(choice.destination != 0){//just prevent unset ones from doing anything; we can remove when all are set
+            navController.navigate(choice.destination)
+        }
+
     }
 }
