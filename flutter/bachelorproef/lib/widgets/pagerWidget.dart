@@ -9,7 +9,7 @@ class PagerWidget extends StatefulWidget {
 class _PagerWidgetState extends State<PagerWidget> {
   int currentPage = 0;
   PageController pageController;
-  final List<int> pages = [1,2,3];
+  final List<int> pages = [1,2,3,4,5];
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _PagerWidgetState extends State<PagerWidget> {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     pageController = PageController(
         initialPage: currentPage,
-        viewportFraction: isPortrait ? 0.5 : 1/3
+        viewportFraction: isPortrait ? 0.5 : 0.3
     );
     return Scaffold(
       appBar: AppBar(
