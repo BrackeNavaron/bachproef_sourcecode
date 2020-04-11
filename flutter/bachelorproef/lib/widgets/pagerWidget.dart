@@ -12,11 +12,6 @@ class _PagerWidgetState extends State<PagerWidget> {
   final List<int> pages = [1,2,3,4,5];
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   void dispose() {
     pageController.dispose();
     super.dispose();
@@ -27,7 +22,7 @@ class _PagerWidgetState extends State<PagerWidget> {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     pageController = PageController(
         initialPage: currentPage,
-        viewportFraction: isPortrait ? 0.5 : 0.3
+        viewportFraction: isPortrait ? 0.6 : 0.25
     );
     return Scaffold(
       appBar: AppBar(
@@ -72,7 +67,7 @@ class _PagerWidgetState extends State<PagerWidget> {
   Widget buildItem(BuildContext context,String item){
     return SizedBox(
       width: 300,
-      height: 300,
+      height: 400,
       child: Card(
         color: Theme.of(context).primaryColor,
         child: Center(
