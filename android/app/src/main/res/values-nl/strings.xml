@@ -18,4 +18,20 @@
     <string name="form_text_hint">Dit is een voorbeeld van een tekst hint</string>
     <string name="form_text_required">Gelieve een waarde op te geven</string>
     <string name="form_text_max_value">Een tekst waarde mag niet langer zijn dan %1d tekens</string>
+    <string name="form_switch_on">Switch Aan</string>
+    <string name="form_switch_off">Switch Uit</string>
+    <string name="form_radio1_on">Radio 1 Aan</string>
+    <string name="form_radio1_off">Radio 1 Uit</string>
+    <string name="form_radio2_on">Radio 2 Aan</string>
+    <string name="form_radio2_off">Radio 2 Uit</string>
+    <string name="dropdown_prompt">Keuze Menu</string>
+    <string-array name="dropdown_items">
+        <item>Een</item>
+        <item>Twee</item>
+        <item>Drie</item>
+        <item>Vier</item>
+        <item>Vijf</item>
+    </string-array>
+    <string name="form_checkbox_checked">Aangevinkt</string>
+    <string name="form_checkbox_not_checked">Niet Aangevinkt</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
@@ -40,6 +41,91 @@
                         app:onTextChanged="@{viewModel.onInputFieldOneChanged}"
                         android:hint="@string/form_text_hint" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:checked="@{viewModel.switchInput}"
+                        android:onClick="@{() -> viewModel.onSwitchChanged()}"
+                        android:text="@{viewModel.switchInput ? @string/form_switch_on : @string/form_switch_off}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/radioButton1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.radio1Input}"
+                            android:onClick="@{() -> viewModel.onRadio1Changed()}"
+                            android:text="@{viewModel.radio1Input ? @string/form_radio1_on : @string/form_radio1_off}" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.radio2Input}"
+                            android:onClick="@{() -> viewModel.onRadio2Changed()}"
+                            android:text="@{viewModel.radio2Input ? @string/form_radio2_on : @string/form_radio2_off}" />
+                    </RadioGroup>
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:prompt="@string/dropdown_prompt"
+                        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                        app:layout_constraintStart_toEndOf="@+id/switch1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:max="@{viewModel.sliderMax}"
+                        android:progress="@{viewModel.sliderInput}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.sliderInput.toString()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+                        app:layout_constraintStart_toStartOf="@+id/seekBar"
+                        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+                        app:layout_constraintVertical_bias="0.034" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.checkboxInput}"
+                        android:onClick="@{() -> viewModel.onCheckboxChanged()}"
+                        android:text="@{viewModel.checkboxInput ? @string/form_checkbox_checked : @string/form_checkbox_not_checked}"
+                        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                        app:layout_constraintStart_toEndOf="@+id/switch1"
+                        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

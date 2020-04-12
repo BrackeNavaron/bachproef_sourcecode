@@ -18,4 +18,20 @@
     <string name="form_text_hint">This is an example text hint</string>
     <string name="form_text_required">Please provide a value</string>
     <string name="form_text_max_value">A text value cannot exceed %1d characters</string>
+    <string name="form_switch_on">Switch On</string>
+    <string name="form_switch_off">Switch Off</string>
+    <string name="form_radio1_on">Radio 1 On</string>
+    <string name="form_radio1_off">Radio 1 Off</string>
+    <string name="form_radio2_on">Radio 2 On</string>
+    <string name="form_radio2_off">Radio 2 Off</string>
+    <string name="dropdown_prompt">Dropdown Menu</string>
+    <string-array name="dropdown_items">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
+    <string name="form_checkbox_checked">Checked</string>
+    <string name="form_checkbox_not_checked">Not Checked</string>
 </resources>
