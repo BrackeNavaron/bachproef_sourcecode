@@ -55,7 +55,7 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
         ShowcaseChoice(
             R.drawable.ic_create_24px,
             R.string.choice_forms,
-            0//TODO paste in the correct id when the destination exists
+            R.id.formFragment
         )
     )
 

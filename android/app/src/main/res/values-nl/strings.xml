@@ -15,4 +15,7 @@
     <string name="choice_permissions">Permissies</string>
     <string name="choice_forms">Formulieren</string>
     <string name="back_to_showcase">Terug naar Voorvertoning</string>
+    <string name="form_text_hint">Dit is een voorbeeld van een tekst hint</string>
+    <string name="form_text_required">Gelieve een waarde op te geven</string>
+    <string name="form_text_max_value">Een tekst waarde mag niet langer zijn dan %1d tekens</string>
 </resources>

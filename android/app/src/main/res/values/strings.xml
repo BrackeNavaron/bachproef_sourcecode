@@ -15,4 +15,7 @@
     <string name="choice_permissions">Permissions</string>
     <string name="choice_forms">Forms</string>
     <string name="back_to_showcase">Back to Showcase</string>
+    <string name="form_text_hint">This is an example text hint</string>
+    <string name="form_text_required">Please provide a value</string>
+    <string name="form_text_max_value">A text value cannot exceed %1d characters</string>
 </resources>
