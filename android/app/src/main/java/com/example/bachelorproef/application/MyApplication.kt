@@ -1,9 +1,7 @@
 package com.example.bachelorproef.application
 
 import androidx.multidex.MultiDexApplication
-import com.example.bachelorproef.viewmodel.ListViewModel
-import com.example.bachelorproef.viewmodel.PagerViewModel
-import com.example.bachelorproef.viewmodel.ShowcaseViewModel
+import com.example.bachelorproef.viewmodel.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -36,6 +34,13 @@ class MyApplication : MultiDexApplication() {
         }
         viewModel {
             ListViewModel()
+        }
+        viewModel {
+            FormViewModel(get())
+        }
+        //Get this VM: by sharedViewModel()
+        viewModel {
+            SharedViewModel()
         }
     }
 }
