@@ -3,9 +3,7 @@ package com.example.bachelorproef.bindingadapters
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.ImageView
-import androidx.core.widget.doOnTextChanged
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.ViewModel
 import com.example.bachelorproef.util.IOnTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -39,8 +37,6 @@ fun setOnTextChanged(view: TextInputEditText, handler: IOnTextChangedListener) {
             //do nothing
         }
 
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            handler.onTextChanged(s)
-        }
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = handler.onTextChanged(s)
     })
 }

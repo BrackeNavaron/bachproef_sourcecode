@@ -9,7 +9,7 @@ import com.example.bachelorproef.R
 import com.example.bachelorproef.application.MyApplication
 import com.example.bachelorproef.util.IOnTextChangedListener
 
-class FormViewModel(application: Application) : AndroidViewModel(application), IOnTextChangedListener {
+class FormViewModel(application: Application) : AndroidViewModel(application) {
     private val textInput = MutableLiveData("")
     private val textInputError = MutableLiveData<String>(null)
     val textInputDrawable = MutableLiveData<Drawable>(null)
@@ -18,17 +18,19 @@ class FormViewModel(application: Application) : AndroidViewModel(application), I
     fun getTextInput(): LiveData<String> = textInput
     fun getTextInputError(): LiveData<String> = textInputError
 
-    override fun onTextChanged(text: CharSequence?) {
-        when {
-            text.isNullOrBlank() -> {
-                textInputError.value = getApplication<MyApplication>().getString(R.string.form_text_required)
-            }
-            text.length > maxTextLength -> {
-                textInputError.value = getApplication<MyApplication>().getString(R.string.form_text_max_value,maxTextLength)
-            }
-            else -> {
-                textInputError.value = null
-                textInput.value = text.toString()
+    val onInputFieldOneChanged = object : IOnTextChangedListener {
+        override fun onTextChanged(text: CharSequence?) {
+            when {
+                text.isNullOrBlank() -> {
+                    textInputError.value = getApplication<MyApplication>().getString(R.string.form_text_required)
+                }
+                text.length > maxTextLength -> {
+                    textInputError.value = getApplication<MyApplication>().getString(R.string.form_text_max_value,maxTextLength)
+                }
+                else -> {
+                    textInputError.value = null
+                    textInput.value = text.toString()
+                }
             }
         }
     }

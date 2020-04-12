@@ -37,7 +37,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{viewModel.textInput}"
-                        app:onTextChanged="@{viewModel}"
+                        app:onTextChanged="@{viewModel.onInputFieldOneChanged}"
                         android:hint="@string/form_text_hint" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
