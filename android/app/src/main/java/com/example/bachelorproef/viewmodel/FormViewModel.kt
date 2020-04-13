@@ -16,8 +16,8 @@ class FormViewModel(application: Application) : AndroidViewModel(application) {
     val textInputDrawable = MutableLiveData<Drawable>(null)
     private val maxTextLength = 20
     private val switchInput = MutableLiveData(false)
-    private val radio1Input = MutableLiveData(true)
-    private val radio2Input = MutableLiveData(false)
+    //Assuming radio 1 is true
+    private val radioInput = MutableLiveData(true)
     private val checkboxInput = MutableLiveData(false)
     private val sliderInput = MutableLiveData(0)
     private val dropdownInput = MutableLiveData(dropdownValues[0])
@@ -25,8 +25,7 @@ class FormViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getSliderInput(): LiveData<Int> = sliderInput
     fun getSwitchInput(): LiveData<Boolean> = switchInput
-    fun getRadio1Input(): LiveData<Boolean> = radio1Input
-    fun getRadio2Input(): LiveData<Boolean> = radio2Input
+    fun getRadioInput(): LiveData<Boolean> = radioInput
     fun getCheckboxInput(): LiveData<Boolean> = checkboxInput
     fun getTextInput(): LiveData<String> = textInput
     fun getTextInputError(): LiveData<String> = textInputError
@@ -53,18 +52,8 @@ class FormViewModel(application: Application) : AndroidViewModel(application) {
         switchInput.value = !switchInput.value!!
     }
 
-    fun onRadio1Changed(){
-        if(!radio1Input.value!!){
-            radio1Input.value = true
-            radio2Input.value = false
-        }
-    }
-
-    fun onRadio2Changed(){
-        if(!radio2Input.value!!){
-            radio2Input.value = true
-            radio1Input.value = false
-        }
+    fun onRadioChanged(isRadio1: Boolean){
+        radioInput.value = isRadio1
     }
 
     fun onCheckboxChanged(){

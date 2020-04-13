@@ -71,17 +71,17 @@
                             android:id="@+id/radioButton1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{viewModel.radio1Input}"
-                            android:onClick="@{() -> viewModel.onRadio1Changed()}"
-                            android:text="@{viewModel.radio1Input ? @string/form_radio1_on : @string/form_radio1_off}" />
+                            android:checked="@{viewModel.radioInput}"
+                            android:onClick="@{() -> viewModel.onRadioChanged(true)}"
+                            android:text="@{viewModel.radioInput ? @string/form_radio1_on : @string/form_radio1_off}" />
 
                         <RadioButton
                             android:id="@+id/radioButton2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{viewModel.radio2Input}"
-                            android:onClick="@{() -> viewModel.onRadio2Changed()}"
-                            android:text="@{viewModel.radio2Input ? @string/form_radio2_on : @string/form_radio2_off}" />
+                            android:checked="@{!viewModel.radioInput}"
+                            android:onClick="@{() -> viewModel.onRadioChanged(false)}"
+                            android:text="@{viewModel.radioInput ? @string/form_radio2_off : @string/form_radio2_on}" />
                     </RadioGroup>
 
                     <Spinner
