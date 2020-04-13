@@ -1,0 +1,6 @@
+
+class FormViewModel {
+  const FormViewModel();
+
+
+}
