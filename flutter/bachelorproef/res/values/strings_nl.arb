@@ -13,5 +13,8 @@
   "animation": "Animatie",
   "permissions": "Permissies",
   "forms": "Formulieren",
-  "back_to_showcase": "Terug naar Voorvertoning"
+  "back_to_showcase": "Terug naar Voorvertoning",
+  "form_text_required": "Gelieve een waarde op te geven",
+  "form_text_max_length": "Een tekstwaarde kan niet langer zijn dan $maxLength",
+  "form_text_hint": "Dit is een tekst hint"
 }

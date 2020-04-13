@@ -1,4 +1,5 @@
 import 'package:bachelorproef/widgets/choiceGrid.dart';
+import 'package:bachelorproef/widgets/formWidget.dart';
 import 'package:bachelorproef/widgets/listWidget.dart';
 import 'package:bachelorproef/widgets/pagerWidget.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class ChoiceGridNavigator extends StatelessWidget {
           case "listRoute": builder = (BuildContext _) => ListWidget();
           break;
           case "pagerRoute": builder = (BuildContext _) => PagerWidget();
+          break;
+          case "formsRoute": builder = (BuildContext _) => FormWidget();
           break;
           default: builder = (BuildContext _) => ChoiceGrid();
         }

@@ -25,6 +25,8 @@ class S implements WidgetsLocalizations {
   String get asyncWork => "Async Work";
   String get back_to_showcase => "Back to Showcase";
   String get five => "five";
+  String get form_text_hint => "This is a text hint";
+  String get form_text_required => "Please provide a value";
   String get forms => "Forms";
   String get four => "four";
   String get lists => "Lists";
@@ -36,6 +38,7 @@ class S implements WidgetsLocalizations {
   String get showcaseTab => "Showcase";
   String get three => "three";
   String get two => "two";
+  String form_text_max_length(String maxLength) => "A value cannot be longer than $maxLength";
 }
 
 class $en extends S {
@@ -51,6 +54,8 @@ class $nl extends S {
   @override
   String get one => "een";
   @override
+  String get form_text_required => "Gelieve een waarde op te geven";
+  @override
   String get two => "twee";
   @override
   String get three => "drie";
@@ -58,6 +63,8 @@ class $nl extends S {
   String get animation => "Animatie";
   @override
   String get navigation => "Navigatie";
+  @override
+  String get form_text_hint => "Dit is een tekst hint";
   @override
   String get showcaseTab => "Voorvertoning";
   @override
@@ -78,6 +85,8 @@ class $nl extends S {
   String get five => "vijf";
   @override
   String get forms => "Formulieren";
+  @override
+  String form_text_max_length(String maxLength) => "Een tekstwaarde kan niet langer zijn dan $maxLength";
 }
 
 class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {

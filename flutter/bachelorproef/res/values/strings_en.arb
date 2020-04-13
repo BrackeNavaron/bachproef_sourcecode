@@ -13,5 +13,8 @@
   "animation": "Animation",
   "permissions": "Permissions",
   "forms": "Forms",
-  "back_to_showcase": "Back to Showcase"
+  "back_to_showcase": "Back to Showcase",
+  "form_text_required": "Please provide a value",
+  "form_text_max_length": "A value cannot be longer than $maxLength",
+  "form_text_hint": "This is a text hint"
 }

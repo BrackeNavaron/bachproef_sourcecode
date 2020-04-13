@@ -1,5 +1,5 @@
 
-import 'package:bachelorproef/viewmodel/FormViewModel.dart';
+import 'package:bachelorproef/viewmodel/formViewModel.dart';
 import 'package:flutter_simple_dependency_injection/injector.dart';
 
 ///This class defines an 'Injector Configuration'.
