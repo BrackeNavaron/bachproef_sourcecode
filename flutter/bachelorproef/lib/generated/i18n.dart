@@ -25,6 +25,14 @@ class S implements WidgetsLocalizations {
   String get asyncWork => "Async Work";
   String get back_to_showcase => "Back to Showcase";
   String get five => "five";
+  String get form_checkbox_checked => "Checked";
+  String get form_checkbox_not_checked => "Not Checked";
+  String get form_radio_1_off => "Radio 1 Off";
+  String get form_radio_1_on => "Radio 1 On";
+  String get form_radio_2_off => "Radio 2 Off";
+  String get form_radio_2_on => "Radio 2 On";
+  String get form_switch_off => "Switch Off";
+  String get form_switch_on => "Switch On";
   String get form_text_hint => "This is a text hint";
   String get form_text_required => "Please provide a value";
   String get forms => "Forms";
@@ -52,15 +60,9 @@ class $nl extends S {
   TextDirection get textDirection => TextDirection.ltr;
 
   @override
-  String get one => "een";
-  @override
-  String get form_text_required => "Gelieve een waarde op te geven";
-  @override
   String get two => "twee";
   @override
   String get three => "drie";
-  @override
-  String get animation => "Animatie";
   @override
   String get navigation => "Navigatie";
   @override
@@ -72,17 +74,39 @@ class $nl extends S {
   @override
   String get four => "vier";
   @override
+  String get permissions => "Permissies";
+  @override
+  String get form_switch_on => "Switch Aan";
+  @override
+  String get five => "vijf";
+  @override
+  String get form_radio_2_on => "Radio 2 Aan";
+  @override
+  String get form_checkbox_checked => "Aangevinkt";
+  @override
+  String get one => "een";
+  @override
+  String get form_text_required => "Gelieve een waarde op te geven";
+  @override
+  String get animation => "Animatie";
+  @override
+  String get form_radio_1_off => "Radio 1 Uit";
+  @override
   String get settingsTab => "Instellingen";
   @override
   String get lists => "Lijsten";
   @override
   String get pagers => "Pagers";
   @override
-  String get permissions => "Permissies";
+  String get form_radio_1_on => "Radio 1 Aan";
+  @override
+  String get form_radio_2_off => "Radio 2 Uit";
   @override
   String get back_to_showcase => "Terug naar Voorvertoning";
   @override
-  String get five => "vijf";
+  String get form_switch_off => "Switch Uit";
+  @override
+  String get form_checkbox_not_checked => "Niet Aangevinkt";
   @override
   String get forms => "Formulieren";
   @override

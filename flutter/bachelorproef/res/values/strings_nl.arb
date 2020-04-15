@@ -16,5 +16,13 @@
   "back_to_showcase": "Terug naar Voorvertoning",
   "form_text_required": "Gelieve een waarde op te geven",
   "form_text_max_length": "Een tekstwaarde kan niet langer zijn dan $maxLength",
-  "form_text_hint": "Dit is een tekst hint"
+  "form_text_hint": "Dit is een tekst hint",
+  "form_switch_on": "Switch Aan",
+  "form_switch_off": "Switch Uit",
+  "form_radio_1_on": "Radio 1 Aan",
+  "form_radio_1_off": "Radio 1 Uit",
+  "form_radio_2_on": "Radio 2 Aan",
+  "form_radio_2_off": "Radio 2 Uit",
+  "form_checkbox_checked": "Aangevinkt",
+  "form_checkbox_not_checked": "Niet Aangevinkt"
 }

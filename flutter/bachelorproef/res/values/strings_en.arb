@@ -16,5 +16,13 @@
   "back_to_showcase": "Back to Showcase",
   "form_text_required": "Please provide a value",
   "form_text_max_length": "A value cannot be longer than $maxLength",
-  "form_text_hint": "This is a text hint"
+  "form_text_hint": "This is a text hint",
+  "form_switch_on": "Switch On",
+  "form_switch_off": "Switch Off",
+  "form_radio_1_on": "Radio 1 On",
+  "form_radio_1_off": "Radio 1 Off",
+  "form_radio_2_on": "Radio 2 On",
+  "form_radio_2_off": "Radio 2 Off",
+  "form_checkbox_checked": "Checked",
+  "form_checkbox_not_checked": "Not Checked"
 }

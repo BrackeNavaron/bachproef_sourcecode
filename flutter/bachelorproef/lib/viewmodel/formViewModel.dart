@@ -7,6 +7,20 @@ class FormViewModel {
 
   bool autoValidate = false;
 
+  bool switchOn = false;
+
+  bool checkboxChecked = false;
+
+  List<int> dropDownItems = [1,2,3,4,5];
+
+  int dropDownValue = 1;
+
+  int radioGroupValue = 0;
+
+  double sliderMax = 100;
+  double sliderMin = 0.0;
+  double sliderValue = 0.0;
+
   String validateTextInput(String value,String valueIsRequired,String maxLengthMessage){
     if(value == null || value.isEmpty){
       return valueIsRequired;
@@ -18,8 +32,13 @@ class FormViewModel {
     }
   }
 
-  void clear() {
-    autoValidate = false;
-    text = "";
-  }
+  void onSwitchChanged() => switchOn = !switchOn;
+
+  void onDropDownChanged(int value) => dropDownValue = value;
+
+  void onCheckboxChanged() => checkboxChecked = !checkboxChecked;
+
+  void onRadioChanged(int value) => radioGroupValue = value;
+
+  void onSliderChanged(double value) => sliderValue = value;
 }

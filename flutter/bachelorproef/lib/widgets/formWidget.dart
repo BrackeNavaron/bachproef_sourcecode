@@ -16,13 +16,27 @@ class _FormWidgetState extends State<FormWidget> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController _textEditingController = TextEditingController();
 
+  String _numberToText(int number){
+    switch(number){
+      case 1: return S.of(context).one;
+      case 2: return S.of(context).two;
+      case 3: return S.of(context).three;
+      case 4: return S.of(context).four;
+      case 5: return S.of(context).five;
+    }
+    return "???";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(S.of(context).forms),
       ),
-      body: MediaQuery.of(context).orientation == Orientation.portrait ? _buildPortrait(context) : _buildLandscape(context),
+      body: SingleChildScrollView(
+        child: MediaQuery.of(context).orientation == Orientation.portrait ? _buildPortrait(context) : _buildLandscape(context),
+      ),
     );
   }
 
@@ -45,7 +59,75 @@ class _FormWidgetState extends State<FormWidget> {
               autovalidate: viewModel.autoValidate,
               onChanged: (value)=> setState((){
                 viewModel.autoValidate = true;
-              }),//Trigger the autovalidate redraw
+              }),
+            ),
+            SwitchListTile(
+              title: Text(viewModel.switchOn ? S.of(context).form_switch_on : S.of(context).form_switch_off),
+              onChanged: (value) => setState(() {
+                viewModel.onSwitchChanged();
+              }),
+              value: viewModel.switchOn,
+              selected: viewModel.switchOn,
+            ),
+            Row(
+              children: <Widget>[
+                SizedBox(width: 10),
+                DropdownButton(
+                  value: viewModel.dropDownValue,
+                  items: viewModel.dropDownItems.map((item) => DropdownMenuItem(
+                    value: item,
+                    child: Text(_numberToText(item)),
+                  )).toList(),
+                  onChanged: (value) => setState((){
+                    viewModel.onDropDownChanged(value);
+                  }),
+                ),
+              ],
+            ),
+            CheckboxListTile(
+              value: viewModel.checkboxChecked,
+              onChanged: (value) => setState((){
+                viewModel.onCheckboxChanged();
+              }),
+              selected: viewModel.checkboxChecked,
+              title: Text(viewModel.checkboxChecked ? S.of(context).form_checkbox_checked : S.of(context).form_checkbox_not_checked),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                RadioListTile(
+                  title: Text(viewModel.radioGroupValue == 1 ? S.of(context).form_radio_1_on : S.of(context).form_radio_1_off),
+                  selected: viewModel.radioGroupValue == 1,
+                  groupValue: viewModel.radioGroupValue,
+                  value: 1,
+                  onChanged: (value) => setState((){
+                    viewModel.onRadioChanged(value);
+                  }),
+                ),
+                RadioListTile(
+                  title: Text(viewModel.radioGroupValue == 2 ? S.of(context).form_radio_2_on : S.of(context).form_radio_2_off),
+                  selected: viewModel.radioGroupValue == 2,
+                  groupValue: viewModel.radioGroupValue,
+                  value: 2,
+                  onChanged: (value) => setState((){
+                    viewModel.onRadioChanged(value);
+                  }),
+                ),
+              ],
+            ),
+            Slider(
+              max: viewModel.sliderMax,
+              min: viewModel.sliderMin,
+              value: viewModel.sliderValue,
+              onChanged: (value){
+                setState(()=> viewModel.onSliderChanged(value));
+              }
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Center(
+                child: Text("${viewModel.sliderValue.truncate()}"),
+              ),
             ),
           ],
         ),
@@ -74,6 +156,71 @@ class _FormWidgetState extends State<FormWidget> {
                 viewModel.autoValidate = true;
               }),//Trigger the autovalidate redraw
             ),
+            SwitchListTile(
+              title: Text(viewModel.switchOn ? S.of(context).form_switch_on : S.of(context).form_switch_off),
+              onChanged: (value) => setState(() {
+                viewModel.onSwitchChanged();
+              }),
+              value: viewModel.switchOn,
+              selected: viewModel.switchOn,
+            ),
+            CheckboxListTile(
+              value: viewModel.checkboxChecked,
+              onChanged: (value) => setState((){
+                viewModel.onCheckboxChanged();
+              }),
+              selected: viewModel.checkboxChecked,
+              title: Text(viewModel.checkboxChecked ? S.of(context).form_checkbox_checked : S.of(context).form_checkbox_not_checked),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: DropdownButton(
+                value: viewModel.dropDownValue,
+                items: viewModel.dropDownItems.map((item) => DropdownMenuItem(
+                  value: item,
+                  child: Text(_numberToText(item)),
+                )).toList(),
+                onChanged: (value) => setState((){
+                  viewModel.onDropDownChanged(value);
+                }),
+              ),
+            ),
+            Column(
+              children: <Widget>[
+                RadioListTile(
+                  title: Text(viewModel.radioGroupValue == 1 ? S.of(context).form_radio_1_on : S.of(context).form_radio_1_off),
+                  selected: viewModel.radioGroupValue == 1,
+                  groupValue: viewModel.radioGroupValue,
+                  value: 1,
+                  onChanged: (value) => setState((){
+                    viewModel.onRadioChanged(value);
+                  }),
+                ),
+                RadioListTile(
+                  title: Text(viewModel.radioGroupValue == 2 ? S.of(context).form_radio_2_on : S.of(context).form_radio_2_off),
+                  selected: viewModel.radioGroupValue == 2,
+                  groupValue: viewModel.radioGroupValue,
+                  value: 2,
+                  onChanged: (value) => setState((){
+                    viewModel.onRadioChanged(value);
+                  }),
+                ),
+                Slider(
+                    max: viewModel.sliderMax,
+                    min: viewModel.sliderMin,
+                    value: viewModel.sliderValue,
+                    onChanged: (value){
+                      setState(()=> viewModel.onSliderChanged(value));
+                    }
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5),
+                  child: Center(
+                    child: Text("${viewModel.sliderValue.truncate()}"),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -82,7 +229,6 @@ class _FormWidgetState extends State<FormWidget> {
 
   @override
   void dispose() {
-    viewModel.clear();
     _textEditingController.dispose();
     super.dispose();
   }
