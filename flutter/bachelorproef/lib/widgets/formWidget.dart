@@ -67,7 +67,6 @@ class _FormWidgetState extends State<FormWidget> {
                 viewModel.onSwitchChanged();
               }),
               value: viewModel.switchOn,
-              selected: viewModel.switchOn,
             ),
             Row(
               children: <Widget>[
@@ -89,7 +88,6 @@ class _FormWidgetState extends State<FormWidget> {
               onChanged: (value) => setState((){
                 viewModel.onCheckboxChanged();
               }),
-              selected: viewModel.checkboxChecked,
               title: Text(viewModel.checkboxChecked ? S.of(context).form_checkbox_checked : S.of(context).form_checkbox_not_checked),
             ),
             Column(
@@ -97,16 +95,12 @@ class _FormWidgetState extends State<FormWidget> {
               children: <Widget>[
                 RadioListTile(
                   title: Text(viewModel.radioGroupValue == 1 ? S.of(context).form_radio_1_on : S.of(context).form_radio_1_off),
-                  selected: viewModel.radioGroupValue == 1,
                   groupValue: viewModel.radioGroupValue,
                   value: 1,
-                  onChanged: (value) => setState((){
-                    viewModel.onRadioChanged(value);
-                  }),
+                  onChanged: (value) => setState(()=> viewModel.onRadioChanged(value)),
                 ),
                 RadioListTile(
                   title: Text(viewModel.radioGroupValue == 2 ? S.of(context).form_radio_2_on : S.of(context).form_radio_2_off),
-                  selected: viewModel.radioGroupValue == 2,
                   groupValue: viewModel.radioGroupValue,
                   value: 2,
                   onChanged: (value) => setState((){
@@ -154,22 +148,18 @@ class _FormWidgetState extends State<FormWidget> {
               autovalidate: viewModel.autoValidate,
               onChanged: (value)=> setState((){
                 viewModel.autoValidate = true;
-              }),//Trigger the autovalidate redraw
+              }),
             ),
             SwitchListTile(
               title: Text(viewModel.switchOn ? S.of(context).form_switch_on : S.of(context).form_switch_off),
-              onChanged: (value) => setState(() {
-                viewModel.onSwitchChanged();
-              }),
+              onChanged: (value) => setState(() => viewModel.onSwitchChanged()),
               value: viewModel.switchOn,
-              selected: viewModel.switchOn,
             ),
             CheckboxListTile(
               value: viewModel.checkboxChecked,
               onChanged: (value) => setState((){
                 viewModel.onCheckboxChanged();
               }),
-              selected: viewModel.checkboxChecked,
               title: Text(viewModel.checkboxChecked ? S.of(context).form_checkbox_checked : S.of(context).form_checkbox_not_checked),
             ),
             Padding(
@@ -189,16 +179,12 @@ class _FormWidgetState extends State<FormWidget> {
               children: <Widget>[
                 RadioListTile(
                   title: Text(viewModel.radioGroupValue == 1 ? S.of(context).form_radio_1_on : S.of(context).form_radio_1_off),
-                  selected: viewModel.radioGroupValue == 1,
                   groupValue: viewModel.radioGroupValue,
                   value: 1,
-                  onChanged: (value) => setState((){
-                    viewModel.onRadioChanged(value);
-                  }),
+                  onChanged: (value) => setState(()=> viewModel.onRadioChanged(value)),
                 ),
                 RadioListTile(
                   title: Text(viewModel.radioGroupValue == 2 ? S.of(context).form_radio_2_on : S.of(context).form_radio_2_off),
-                  selected: viewModel.radioGroupValue == 2,
                   groupValue: viewModel.radioGroupValue,
                   value: 2,
                   onChanged: (value) => setState((){
