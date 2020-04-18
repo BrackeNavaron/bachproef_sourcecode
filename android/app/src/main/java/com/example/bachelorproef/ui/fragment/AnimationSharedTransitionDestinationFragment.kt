@@ -31,10 +31,6 @@ class AnimationSharedTransitionDestinationFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).supportActionBar!!
         toolbar.title = getString(R.string.animate_shared_transition_button)
         backButton.setOnClickListener {
-            //Don't use a shared element transition to go back
-            sharedElementEnterTransition = null
-            sharedElementReturnTransition = null
-            view.transitionName = null
             findNavController().navigateUp()
         }
     }
