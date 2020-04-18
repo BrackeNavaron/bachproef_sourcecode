@@ -10,5 +10,14 @@
         android:id="@+id/showcaseFragment"
         android:name="com.example.bachelorproef.ui.fragment.ShowcaseFragment"
         android:label="ShowcaseFragment"
-        tools:layout="@layout/fragment_showcase"/>
+        tools:layout="@layout/fragment_showcase">
+        <action
+            android:id="@+id/action_showcaseFragment_to_animationSharedTransitionDestinationFragment"
+            app:destination="@id/animationSharedTransitionDestinationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animationSharedTransitionDestinationFragment"
+        android:name="com.example.bachelorproef.ui.fragment.AnimationSharedTransitionDestinationFragment"
+        android:label="AnimationSharedTransitionDestinationFragment"
+        tools:layout="@layout/fragment_animation_transition_destination"/>
 </navigation>

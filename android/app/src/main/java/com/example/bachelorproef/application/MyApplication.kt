@@ -36,6 +36,9 @@ class MyApplication : MultiDexApplication() {
             ListViewModel()
         }
         viewModel {
+            AnimationViewModel()
+        }
+        viewModel {
             FormViewModel(get())
         }
         //Get this VM: by sharedViewModel()

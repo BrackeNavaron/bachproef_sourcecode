@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_showcaseChoiceFragment_to_formFragment"
             app:destination="@id/formFragment" />
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_animationsFragment"
+            app:destination="@id/animationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
@@ -34,4 +37,9 @@
         android:name="com.example.bachelorproef.ui.fragment.FormFragment"
         android:label="FormFragment"
         tools:layout="@layout/fragment_form"/>
+    <fragment
+        android:id="@+id/animationsFragment"
+        android:name="com.example.bachelorproef.ui.fragment.AnimationsFragment"
+        android:label="AnimationsFragment"
+        tools:layout="@layout/fragment_animation"/>
 </navigation>

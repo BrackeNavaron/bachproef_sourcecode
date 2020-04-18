@@ -34,4 +34,13 @@
     </string-array>
     <string name="form_checkbox_checked">Aangevinkt</string>
     <string name="form_checkbox_not_checked">Niet Aangevinkt</string>
+    <string name="animate_button_forward">Animeren</string>
+    <string name="animate_button_reset">Animatie Resetten</string>
+    <string name="animate_shared_transition_button">Transitie met gedeeld element</string>
+    <string name="animate_shared_transition_text">Transitie Tekst</string>
+    <string name="go_back">Ga Terug</string>
+    <string name="animation_color">Kleur</string>
+    <string name="animation_colorTextSize_together">Kleur/Tekst Samen</string>
+    <string name="animation_colorTextSize_sequence">Kleur/Tekst na elkaar</string>
+    <string name="animation_colorTextSize_delay">Kleur/Tekst met vertraging</string>
 </resources>

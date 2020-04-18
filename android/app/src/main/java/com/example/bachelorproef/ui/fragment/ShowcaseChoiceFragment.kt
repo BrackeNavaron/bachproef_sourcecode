@@ -45,7 +45,7 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
         ShowcaseChoice(
             R.drawable.ic_transform_24px,
             R.string.choice_animation,
-            0//TODO paste in the correct id when the destination exists
+            R.id.animationsFragment
         ),
         ShowcaseChoice(
             R.drawable.ic_screen_lock_portrait_24px,
