@@ -34,23 +34,11 @@ class _AnimationWidgetState extends State<AnimationWidget> with TickerProviderSt
     _colorTextSequenceController = AnimationController(vsync: this,duration: Duration(milliseconds: 500));
     _colorTextDelayedController = AnimationController(vsync: this,duration: Duration(milliseconds: 1000));
     colorAnim = ColorTween(begin: Colors.black, end: Colors.green).animate(_colorController);
-    colorAnim2 = ColorTween(begin: Colors.black,end: Colors.green).animate(
-        CurvedAnimation(
-          parent: _colorTextTogetherController,
-          curve: Interval(0.0,1.0,curve: Curves.ease),
-        )
-    );
-    textSizeAnim2 = Tween(begin: 12.0,end: 24.0).animate(
-        CurvedAnimation(
-          parent: _colorTextTogetherController,
-          curve: Interval(0.0,1.0,curve: Curves.ease),
-        )
-    );
+    colorAnim2 = ColorTween(begin: Colors.black,end: Colors.green).animate(_colorTextTogetherController);
+    textSizeAnim2 = Tween(begin: 12.0,end: 24.0).animate(_colorTextTogetherController);
     colorAnim3 = ColorTween(begin: Colors.black,end: Colors.green).animate(
-        CurvedAnimation(
-          parent: _colorTextSequenceController,
-          curve: Interval(0.0,0.5,curve: Curves.ease),
-        )
+        CurvedAnimation(parent: _colorTextSequenceController,
+          curve: Interval(0.0,0.5,curve: Curves.ease))
     );
     textSizeAnim3 = Tween(begin: 12.0,end: 24.0).animate(
         CurvedAnimation(
@@ -58,16 +46,15 @@ class _AnimationWidgetState extends State<AnimationWidget> with TickerProviderSt
           curve: Interval(0.5,1.0,curve: Curves.ease),
         )
     );
-    colorAnim4 = ColorTween(begin: Colors.black,end: Colors.green).animate(
-        CurvedAnimation(
-          parent: _colorTextDelayedController,
+    colorAnim4 = ColorTween(begin: Colors.grey,end: Color(0xFF445588)).animate(
+        CurvedAnimation(parent: _colorTextDelayedController,
           curve: Interval(0.0,1.0,curve: Curves.ease),
         )
     );
     textSizeAnim4 = Tween(begin: 12.0,end: 24.0).animate(
         CurvedAnimation(
           parent: _colorTextDelayedController,
-          curve: Interval(0.6,1.0,curve: Curves.ease),
+          curve: Interval(0.8,1.0,curve: Curves.ease),
         )
     );
   }
