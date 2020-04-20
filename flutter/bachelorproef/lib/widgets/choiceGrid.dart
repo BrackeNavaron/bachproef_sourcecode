@@ -29,7 +29,7 @@ class ChoiceGrid extends StatelessWidget {
       },
       {
         "label": S.of(context).animation,
-        "destination":"animationRoute",
+        "destination":"animationsRoute",
         "image": Icons.transform
       },
       {

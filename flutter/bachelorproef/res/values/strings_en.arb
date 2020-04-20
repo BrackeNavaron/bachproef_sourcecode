@@ -24,5 +24,14 @@
   "form_radio_2_on": "Radio 2 On",
   "form_radio_2_off": "Radio 2 Off",
   "form_checkbox_checked": "Checked",
-  "form_checkbox_not_checked": "Not Checked"
+  "form_checkbox_not_checked": "Not Checked",
+  "animate_button_forward": "Animate",
+  "animate_button_reset": "Reset Animation",
+  "shared_element_button": "Shared Element Transition",
+  "shared_element_text": "This will transition",
+  "go_back": "Go Back",
+  "animate_color": "Color",
+  "animate_colorSize_together": "Color/Text Together",
+  "animate_colorSize_sequence": "Color/Text Sequence",
+  "animate_colorSize_delay": "Color/Text Delay"
 }

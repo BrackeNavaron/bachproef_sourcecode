@@ -1,6 +1,8 @@
+import 'package:bachelorproef/widgets/animationWidget.dart';
 import 'package:bachelorproef/widgets/choiceGrid.dart';
 import 'package:bachelorproef/widgets/formWidget.dart';
 import 'package:bachelorproef/widgets/listWidget.dart';
+import 'package:bachelorproef/widgets/navigatorKeyProviderWidget.dart';
 import 'package:bachelorproef/widgets/pagerWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,7 @@ class ChoiceGridNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
+      key: NavigatorKeyProviderWidget.of(context).gridNavigator,
       initialRoute: 'choiceGridRoute',
       onGenerateRoute: (settings){
         var builder;
@@ -21,6 +24,8 @@ class ChoiceGridNavigator extends StatelessWidget {
           case "pagerRoute": builder = (BuildContext _) => PagerWidget();
           break;
           case "formsRoute": builder = (BuildContext _) => FormWidget();
+          break;
+          case "animationsRoute": builder = (BuildContext _) => AnimationWidget();
           break;
           default: builder = (BuildContext _) => ChoiceGrid();
         }

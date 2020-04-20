@@ -24,5 +24,14 @@
   "form_radio_2_on": "Radio 2 Aan",
   "form_radio_2_off": "Radio 2 Uit",
   "form_checkbox_checked": "Aangevinkt",
-  "form_checkbox_not_checked": "Niet Aangevinkt"
+  "form_checkbox_not_checked": "Niet Aangevinkt",
+  "animate_button_forward": "Animeren",
+  "animate_button_reset": "Reset Animatie",
+  "shared_element_button": "Gedeeld Element Transitie",
+  "shared_element_text": "Dit zal overgaan van A naar B",
+  "go_back": "Keer Terug",
+  "animate_color": "Kleur",
+  "animate_colorSize_together": "Kleur/Tekst Samen",
+  "animate_colorSize_sequence": "Kleur/Tekst Achtereen",
+  "animate_colorSize_delay": "Kleur/Tekst Vertraagd"
 }

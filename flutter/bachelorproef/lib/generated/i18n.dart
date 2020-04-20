@@ -21,6 +21,12 @@ class S implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  String get animate_button_forward => "Animate";
+  String get animate_button_reset => "Reset Animation";
+  String get animate_color => "Color";
+  String get animate_colorSize_delay => "Color/Text Delay";
+  String get animate_colorSize_sequence => "Color/Text Sequence";
+  String get animate_colorSize_together => "Color/Text Together";
   String get animation => "Animation";
   String get asyncWork => "Async Work";
   String get back_to_showcase => "Back to Showcase";
@@ -37,12 +43,15 @@ class S implements WidgetsLocalizations {
   String get form_text_required => "Please provide a value";
   String get forms => "Forms";
   String get four => "four";
+  String get go_back => "Go Back";
   String get lists => "Lists";
   String get navigation => "Navigation";
   String get one => "one";
   String get pagers => "Pagers";
   String get permissions => "Permissions";
   String get settingsTab => "Settings";
+  String get shared_element_button => "Shared Element Transition";
+  String get shared_element_text => "This will transition";
   String get showcaseTab => "Showcase";
   String get three => "three";
   String get two => "two";
@@ -64,6 +73,8 @@ class $nl extends S {
   @override
   String get three => "drie";
   @override
+  String get shared_element_button => "Gedeeld Element Transitie";
+  @override
   String get navigation => "Navigatie";
   @override
   String get form_text_hint => "Dit is een tekst hint";
@@ -72,15 +83,23 @@ class $nl extends S {
   @override
   String get asyncWork => "Asynchroon Werk";
   @override
+  String get animate_button_reset => "Reset Animatie";
+  @override
   String get four => "vier";
   @override
   String get permissions => "Permissies";
   @override
   String get form_switch_on => "Switch Aan";
   @override
+  String get animate_colorSize_delay => "Kleur/Tekst Vertraagd";
+  @override
+  String get animate_color => "Kleur";
+  @override
   String get five => "vijf";
   @override
   String get form_radio_2_on => "Radio 2 Aan";
+  @override
+  String get shared_element_text => "Dit zal overgaan van A naar B";
   @override
   String get form_checkbox_checked => "Aangevinkt";
   @override
@@ -88,15 +107,23 @@ class $nl extends S {
   @override
   String get form_text_required => "Gelieve een waarde op te geven";
   @override
+  String get go_back => "Keer Terug";
+  @override
+  String get animate_colorSize_sequence => "Kleur/Tekst Achtereen";
+  @override
   String get animation => "Animatie";
   @override
   String get form_radio_1_off => "Radio 1 Uit";
+  @override
+  String get animate_button_forward => "Animeren";
   @override
   String get settingsTab => "Instellingen";
   @override
   String get lists => "Lijsten";
   @override
   String get pagers => "Pagers";
+  @override
+  String get animate_colorSize_together => "Kleur/Tekst Samen";
   @override
   String get form_radio_1_on => "Radio 1 Aan";
   @override

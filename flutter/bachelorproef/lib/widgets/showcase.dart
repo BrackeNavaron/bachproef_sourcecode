@@ -38,12 +38,12 @@ class _ShowcaseState extends State<Showcase> {
         currentIndex: _selectedPage,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.view_module),
-            title: Text(S.of(context).showcaseTab)
+              icon: Icon(Icons.view_module),
+              title: Text(S.of(context).showcaseTab)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text(S.of(context).settingsTab)
+              icon: Icon(Icons.settings),
+              title: Text(S.of(context).settingsTab)
           ),
         ],
       ),
