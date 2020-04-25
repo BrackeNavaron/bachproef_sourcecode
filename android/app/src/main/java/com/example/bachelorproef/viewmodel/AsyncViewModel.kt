@@ -84,23 +84,24 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         if(channelExecuted.value!!) return
         channelExecuted.value = true
         val channel = Channel<Int>()
-        val handler = CoroutineExceptionHandler { _, exception ->
-            channelOutput.value = channelErrorString
-            isChannelLoading.value = false
-            channel.close()
-        }
-        viewModelScope.launch(handler) {
-                for (x in 1..5){
-                    isChannelLoading.value = true
-                    delay(200L)
-                    if(x == 3){
-                        throw IndexOutOfBoundsException("Oops!")
-                    }else{
-                        channel.send(x * x)
+        viewModelScope.launch {
+                try{
+                    for (x in 1..5){
+                        isChannelLoading.value = true
+                        delay(200L)
+                        if(x == 3){
+                            throw IndexOutOfBoundsException("Oops!")
+                        }else{
+                            channel.send(x * x)
+                        }
+                        isChannelLoading.value = false
                     }
+                }catch (e : IndexOutOfBoundsException){
+                    channelOutput.value = channelErrorString
                     isChannelLoading.value = false
+                }finally {
+                    channel.close()
                 }
-                channel.close()
         }
         viewModelScope.launch {
             for (i in channel){
