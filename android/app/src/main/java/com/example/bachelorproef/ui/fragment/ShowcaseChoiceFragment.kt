@@ -25,7 +25,7 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
         ShowcaseChoice(
             R.drawable.ic_hourglass_full_24px,
             R.string.choice_async,
-            0//TODO paste in the correct id when the destination exists
+            R.id.asyncFragment
         ),
         ShowcaseChoice(
             R.drawable.ic_navigation_24px,

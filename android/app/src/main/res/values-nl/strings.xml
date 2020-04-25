@@ -43,4 +43,11 @@
     <string name="animation_colorTextSize_together">Kleur/Tekst Samen</string>
     <string name="animation_colorTextSize_sequence">Kleur/Tekst na elkaar</string>
     <string name="animation_colorTextSize_delay">Kleur/Tekst met vertraging</string>
+    <string name="coroutine_error">Coroutine Heeft Gefaald!</string>
+    <string name="coroutine_idle">Start Coroutine</string>
+    <string name="coroutine_idle_error">Start Coroutine Fout</string>
+    <string name="channel_idle_error">Start Channel Fout</string>
+    <string name="coroutine_done">Klaar!</string>
+    <string name="channel_error">Channel Heeft Gefaald!</string>
+    <string name="channel_idle">Start Channel</string>
 </resources>

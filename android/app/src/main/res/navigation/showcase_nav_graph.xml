@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_showcaseChoiceFragment_to_animationsFragment"
             app:destination="@id/animationsFragment" />
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_asyncFragment"
+            app:destination="@id/asyncFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
@@ -42,4 +45,9 @@
         android:name="com.example.bachelorproef.ui.fragment.AnimationsFragment"
         android:label="AnimationsFragment"
         tools:layout="@layout/fragment_animation"/>
+    <fragment
+        android:id="@+id/asyncFragment"
+        android:name="com.example.bachelorproef.ui.fragment.AsyncFragment"
+        android:label="AsyncFragment"
+        tools:layout="@layout/fragment_async"/>
 </navigation>

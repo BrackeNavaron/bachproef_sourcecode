@@ -44,4 +44,11 @@
     <string name="animation_colorTextSize_together">Color/Text Together</string>
     <string name="animation_colorTextSize_sequence">Color/Text Sequential</string>
     <string name="animation_colorTextSize_delay">Color/Text Delayed</string>
+    <string name="coroutine_error">Coroutine Failed!</string>
+    <string name="coroutine_idle">Start Coroutine</string>
+    <string name="coroutine_idle_error">Start Coroutine Error</string>
+    <string name="channel_idle_error">Start Channel Error</string>
+    <string name="coroutine_done">Done!</string>
+    <string name="channel_error">Channel Failed!</string>
+    <string name="channel_idle">Start Channel</string>
 </resources>

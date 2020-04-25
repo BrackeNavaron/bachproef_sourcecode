@@ -45,5 +45,8 @@ class MyApplication : MultiDexApplication() {
         viewModel {
             SharedViewModel()
         }
+        viewModel {
+            AsyncViewModel(get())
+        }
     }
 }
