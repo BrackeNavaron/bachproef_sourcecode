@@ -29,27 +29,14 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
     fun getIsCoroutineLoading() : LiveData<Boolean> = isCoroutineLoading
     fun getIsChannelLoading() : LiveData<Boolean> = isChannelLoading
 
-    suspend fun onCoroutine(){
-        isCoroutineLoading.value = true
-        coroutineOutput.value = ""
-        delay(300L)//Pretend we do something
-        coroutineOutput.value = coroutineDoneString
-        isCoroutineLoading.value = false
-        coroutineExecuted.value = false
+    suspend fun onCoroutine() : String {
+        delay(300L)//Pretend we do something, not counted in results since it's a 'fake' coroutine
+        return coroutineDoneString
     }
 
-    suspend fun onCoroutineWithError(){
-        isCoroutineLoading.value = true
-        coroutineOutput.value = ""
-        try {
-            delay(300L)//Pretend we do something
-            throw IndexOutOfBoundsException("Oops!")
-        }catch (ex : IndexOutOfBoundsException){
-            coroutineOutput.value = coroutineErrorString
-        }finally {
-            isCoroutineLoading.value = false
-            coroutineExecuted.value = false
-        }
+    suspend fun onCoroutineWithError() : String {
+        delay(300L)//Pretend we do something
+        throw IndexOutOfBoundsException("Oops!")
     }
 
     suspend fun startChannel(channel: Channel<Int>){
@@ -71,7 +58,11 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         if(coroutineExecuted.value!!) return
         coroutineExecuted.value = true
         viewModelScope.launch {
-            onCoroutine()
+            isCoroutineLoading.value = true
+            coroutineOutput.value = ""
+            coroutineOutput.value = onCoroutine()
+            isCoroutineLoading.value = false
+            coroutineExecuted.value = false
         }
     }
 
@@ -79,7 +70,16 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         if(coroutineExecuted.value!!) return
         coroutineExecuted.value = true
         viewModelScope.launch {
-            onCoroutineWithError()
+            isCoroutineLoading.value = true
+            coroutineOutput.value = ""
+            try {
+                coroutineOutput.value = onCoroutineWithError()
+            }catch (ex : IndexOutOfBoundsException){
+                coroutineOutput.value = coroutineErrorString
+            }finally {
+                isCoroutineLoading.value = false
+                coroutineExecuted.value = false
+            }
         }
     }
 
