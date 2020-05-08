@@ -16,10 +16,3 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
     }
 }
-
-@Composable
-{
-    fun HelloWorld(text: String){
-        Text(text = "Hello $text");
-    }
-}

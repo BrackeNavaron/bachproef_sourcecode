@@ -1,0 +1,6 @@
+@Composable
+{
+    fun HelloWorld(text: String){
+        Text(text = "Hello $text");
+    }
+}
