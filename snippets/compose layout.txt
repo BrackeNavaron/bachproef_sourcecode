@@ -1,5 +1,5 @@
 class MainActivity : AppCompatActivity(){
-    override fon onCreate(...){
+    override fun onCreate(...){
         super.onCreate(...)
         setContent {
             HelloWorld("Android")
