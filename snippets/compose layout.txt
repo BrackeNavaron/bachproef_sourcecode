@@ -1,3 +1,12 @@
+class MainActivity : AppCompatActivity(){
+    override fon onCreate(...){
+        super.onCreate(...)
+        setContent {
+            HelloWorld("Android")
+        }
+    }
+}
+
 @Composable
 {
     fun HelloWorld(text: String){
