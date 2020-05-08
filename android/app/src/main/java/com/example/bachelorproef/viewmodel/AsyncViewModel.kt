@@ -29,16 +29,49 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
     fun getIsCoroutineLoading() : LiveData<Boolean> = isCoroutineLoading
     fun getIsChannelLoading() : LiveData<Boolean> = isChannelLoading
 
+    suspend fun onCoroutine(){
+        isCoroutineLoading.value = true
+        coroutineOutput.value = ""
+        delay(300L)//Pretend we do something
+        coroutineOutput.value = coroutineDoneString
+        isCoroutineLoading.value = false
+        coroutineExecuted.value = false
+    }
+
+    suspend fun onCoroutineWithError(){
+        isCoroutineLoading.value = true
+        coroutineOutput.value = ""
+        try {
+            delay(300L)//Pretend we do something
+            throw IndexOutOfBoundsException("Oops!")
+        }catch (ex : IndexOutOfBoundsException){
+            coroutineOutput.value = coroutineErrorString
+        }finally {
+            isCoroutineLoading.value = false
+            coroutineExecuted.value = false
+        }
+    }
+
+    suspend fun startChannel(channel: Channel<Int>){
+        for (x in 1..5){
+            delay(200L)
+            channel.send(x * x)
+        }
+        channel.close()// we're done sending
+    }
+
+    suspend fun receiveFromChannel(channel: Channel<Int>){
+        for (i in channel){
+            channelOutput.value = i.toString()
+        }
+        channelExecuted.value = false
+    }
+
     fun doCoroutine(){
         if(coroutineExecuted.value!!) return
         coroutineExecuted.value = true
         viewModelScope.launch {
-            isCoroutineLoading.value = true
-            coroutineOutput.value = ""
-            delay(300L)//Pretend we do something
-            coroutineOutput.value = coroutineDoneString
-            isCoroutineLoading.value = false
-            coroutineExecuted.value = false
+            onCoroutine()
         }
     }
 
@@ -46,17 +79,7 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         if(coroutineExecuted.value!!) return
         coroutineExecuted.value = true
         viewModelScope.launch {
-            isCoroutineLoading.value = true
-            coroutineOutput.value = ""
-            try {
-                delay(300L)//Pretend we do something
-                throw IndexOutOfBoundsException("Oops!")
-            }catch (ex : IndexOutOfBoundsException){
-                coroutineOutput.value = coroutineErrorString
-            }finally {
-                isCoroutineLoading.value = false
-                coroutineExecuted.value = false
-            }
+            onCoroutineWithError()
         }
     }
 
@@ -65,17 +88,36 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         channelExecuted.value = true
         val channel = Channel<Int>()
         viewModelScope.launch {
-            for (x in 1..5){
-                delay(200L)
-                channel.send(x * x)
-            }
-            channel.close() // we're done sending
+            startChannel(channel)
         }
         viewModelScope.launch {
-            for (i in channel){
-                channelOutput.value = i.toString()
+            receiveFromChannel(channel)
+        }
+    }
+
+    suspend fun startErrorChannel(channel : Channel<Int>){
+        try{
+            for (x in 1..5){
+                isChannelLoading.value = true
+                delay(200L)
+                if(x == 3){
+                    throw IndexOutOfBoundsException("Oops!")
+                }else{
+                    channel.send(x * x)
+                }
+                isChannelLoading.value = false
             }
-            channelExecuted.value = false
+        }catch (e : IndexOutOfBoundsException){
+            channelOutput.value = channelErrorString
+            isChannelLoading.value = false
+        }finally {
+            channel.close()
+        }
+    }
+
+    suspend fun receiveFromErrorChannel(channel: Channel<Int>){
+        for (i in channel){
+            channelOutput.value = i.toString()
         }
     }
 
@@ -85,28 +127,10 @@ class AsyncViewModel(application: Application) : AndroidViewModel(application){
         channelExecuted.value = true
         val channel = Channel<Int>()
         viewModelScope.launch {
-                try{
-                    for (x in 1..5){
-                        isChannelLoading.value = true
-                        delay(200L)
-                        if(x == 3){
-                            throw IndexOutOfBoundsException("Oops!")
-                        }else{
-                            channel.send(x * x)
-                        }
-                        isChannelLoading.value = false
-                    }
-                }catch (e : IndexOutOfBoundsException){
-                    channelOutput.value = channelErrorString
-                    isChannelLoading.value = false
-                }finally {
-                    channel.close()
-                }
+            startErrorChannel(channel)
         }
         viewModelScope.launch {
-            for (i in channel){
-                channelOutput.value = i.toString()
-            }
+            receiveFromErrorChannel(channel)
         }
     }
 
