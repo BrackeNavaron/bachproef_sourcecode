@@ -50,4 +50,5 @@
     <string name="coroutine_done">Klaar!</string>
     <string name="channel_error">Channel Heeft Gefaald!</string>
     <string name="channel_idle">Start Channel</string>
+    <string name="nav_with_arg">Navigeer met argumenten</string>
 </resources>

@@ -24,6 +24,14 @@
         <action
             android:id="@+id/action_showcaseChoiceFragment_to_asyncFragment"
             app:destination="@id/asyncFragment" />
+
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_navigationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:destination="@id/navigationFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
@@ -50,4 +58,21 @@
         android:name="com.example.bachelorproef.ui.fragment.AsyncFragment"
         android:label="AsyncFragment"
         tools:layout="@layout/fragment_async"/>
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.example.bachelorproef.ui.fragment.NavigationFragment"
+        android:label="NavigationFragment" >
+        <action
+            android:id="@+id/action_navigationFragment_to_navArgsFragment"
+            app:destination="@id/navArgsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navArgsFragment"
+        android:name="com.example.bachelorproef.ui.fragment.NavArgsFragment"
+        android:label="NavArgsFragment">
+        <argument
+            android:name="nav_arg"
+            android:defaultValue="SomeNavigationArgument"
+            app:argType="string" />
+    </fragment>
 </navigation>

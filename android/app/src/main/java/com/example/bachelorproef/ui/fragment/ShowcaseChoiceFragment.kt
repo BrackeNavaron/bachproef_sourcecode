@@ -30,7 +30,7 @@ class ShowcaseChoiceFragment : Fragment(), ChoiceClickListener {
         ShowcaseChoice(
             R.drawable.ic_navigation_24px,
             R.string.choice_navigation,
-            0//TODO paste in the correct id when the destination exists
+            R.id.navigationFragment
         ),
         ShowcaseChoice(
             R.drawable.ic_format_list_numbered_24px,
