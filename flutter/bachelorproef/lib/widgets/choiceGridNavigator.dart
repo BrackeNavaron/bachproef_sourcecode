@@ -19,14 +19,12 @@ class ChoiceGridNavigator extends StatelessWidget {
         var builder;
         switch(settings.name){
           //TODO more routes above default, one per option in the grid + per extra nested navigation things
-          case "listRoute": builder = (BuildContext _) => ListWidget();
-          break;
-          case "pagerRoute": builder = (BuildContext _) => PagerWidget();
-          break;
-          case "formsRoute": builder = (BuildContext _) => FormWidget();
-          break;
+          case "listRoute": builder = (BuildContext _) => ListWidget(); break;
+          case "pagerRoute": builder = (BuildContext _) => PagerWidget(); break;
+          case "formsRoute": builder = (BuildContext _) => FormWidget(); break;
           case "animationsRoute": builder = (BuildContext _) => AnimationWidget();
           break;
+
           default: builder = (BuildContext _) => ChoiceGrid();
         }
         return MaterialPageRoute(builder: builder, settings: settings);
