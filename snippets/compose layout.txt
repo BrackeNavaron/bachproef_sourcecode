@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity(){
 @Composable
 {
     fun HelloWorld(text: String){
-        Text(text = "Hello $text!");
+        Text(text = "Hello $text!")
     }
 }
