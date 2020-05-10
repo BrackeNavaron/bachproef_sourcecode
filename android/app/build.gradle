@@ -16,7 +16,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
         //override with custom for testing chapter
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.bachelorproef.runner.KoinTestRunner"
     }
 
     buildTypes {
@@ -50,7 +50,7 @@ ext {
     test_junit_ext_version = '1.0.0'
     test_junit_version = '4.12'
     test_rules_version = '1.1.0'
-    viewmodel_lifecycle_extensions_version = '2.3.0-alpha01'
+    viewmodel_lifecycle_extensions_version = '2.3.0-alpha02'
     appcompat_version = '1.1.0'
     androidx_core_version = '1.2.0'
     constraintlayout_version = '1.1.3'
