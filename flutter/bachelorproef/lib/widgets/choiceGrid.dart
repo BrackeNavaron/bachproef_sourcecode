@@ -115,6 +115,9 @@ class _AppBarContentState extends State<AppBarContent> {
 
   String title;
 
+  final plusButtonKey = ValueKey("plusButton");
+  final textKey = ValueKey("title");
+
   @override
   Widget build(BuildContext context) {
     if(title == null) title = S.of(context).one;
@@ -127,7 +130,7 @@ class _AppBarContentState extends State<AppBarContent> {
             return Row(
               children: <Widget>[
                 Expanded(
-                  child: Text(title),
+                  child: Text(title, key: textKey),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -140,6 +143,7 @@ class _AppBarContentState extends State<AppBarContent> {
                       }),
                     ),
                     IconButton(
+                      key: plusButtonKey,
                       icon: Icon(Icons.add,color: Colors.white),
                       onPressed: () => setState((){
                         title = choices[1];
