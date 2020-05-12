@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     signingConfigs {
-        debug {
+        release {
             storeFile file('E:\\bachelorproef\\bachproef_sourcecode\\android_keystore\\keystore.jks')
             storePassword '123123123'
             keyAlias = 'key0'
@@ -28,6 +28,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
