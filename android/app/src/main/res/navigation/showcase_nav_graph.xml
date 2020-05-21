@@ -32,6 +32,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:destination="@id/navigationFragment" />
+        <action
+            android:id="@+id/action_showcaseChoiceFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
@@ -75,4 +78,8 @@
             android:defaultValue="SomeNavigationArgument"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.bachelorproef.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
